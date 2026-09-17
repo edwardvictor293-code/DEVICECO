@@ -1,0 +1,5 @@
+<?php
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+return new class extends Migration { public function up(): void { Schema::create('cycling_routes', function (Blueprint $table) { $table->id(); $table->string('name'); $table->string('slug')->unique(); $table->string('location'); $table->string('difficulty'); $table->decimal('distance', 5, 1); $table->unsignedInteger('elevation'); $table->unsignedInteger('duration_minutes'); $table->text('description'); $table->string('image_url'); $table->timestamps(); }); Schema::create('journal_posts', function (Blueprint $table) { $table->id(); $table->string('title'); $table->string('slug')->unique(); $table->string('category'); $table->string('excerpt'); $table->longText('body'); $table->string('author'); $table->string('image_url'); $table->timestamp('published_at')->nullable(); $table->timestamps(); }); } public function down(): void { Schema::dropIfExists('journal_posts'); Schema::dropIfExists('cycling_routes'); } };

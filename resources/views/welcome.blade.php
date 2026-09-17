@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DEVICECO creates precision bicycles for the long way forward.">
+    <title>DEVICECO | The long way forward</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+<body class="home-page">
+<div class="site-shell">
+    <x-site-loader />
+    <x-site-navigation />
+    <main>
+        <section class="hero-v2">
+            <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="{{ asset('videos/deviceco-hero-poster.jpg') }}" aria-hidden="true">
+                @if(file_exists(public_path('videos/deviceco-hero.mp4')))<source src="{{ asset('videos/deviceco-hero.mp4') }}" type="video/mp4">@endif
+            </video>
+            <div class="hero-vignette"></div><div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+            <div class="hero-copy-v2 reveal"><p class="eyebrow"><span></span> Precision in motion / 01</p><h1>Built for<br><em>the long</em><br>way forward.</h1><p class="hero-lede">A new generation of performance bicycles, shaped by restraint and sharpened by distance.</p><a href="/bicycles" class="button button-light" data-transition>Enter the collection <span>↗</span></a></div>
+            <div class="hero-bike-wrap"><div class="hero-bike-glow"></div><div class="hero-bike" role="img" aria-label="Aero One performance bicycle"></div></div>
+            <div class="hero-readout glass-panel"><span>DEVICECO / AERO ONE</span><span>0.00 — 40.00 KM/H</span><span class="readout-line"></span><small>LIVE SYSTEM / 01</small></div><div class="hero-scroll"><span>Scroll to enter</span><i></i></div>
+        </section>
+        <section class="statement-v2 section-dark" id="story"><div class="section-kicker">02 — The DEVICECO way</div><div class="statement-layout"><h2 class="display-v2 reveal">The best<br>technology<br>feels like<br><em>instinct.</em></h2><div class="statement-aside reveal"><p>We make the things that get you out the door. Objects with less noise, more intention, and a point of view about what a ride can become.</p><a class="arrow-link light-link" href="/about">Why we build <span>↗</span></a></div></div><div class="signal-grid"><div><span>01</span><strong>Less, considered.</strong></div><div><span>02</span><strong>More, experienced.</strong></div><div><span>03</span><strong>Always in motion.</strong></div></div></section>
+        <section class="story-engine" id="technology"><div class="story-pin"><div class="story-visual"><div class="story-gridlines"></div><div class="story-bike" data-story-bike></div><div class="hotspot hotspot-frame" data-hotspot="frame"><span>01</span></div><div class="hotspot hotspot-drive" data-hotspot="drivetrain"><span>02</span></div><div class="hotspot hotspot-brake" data-hotspot="braking"><span>03</span></div><div class="hotspot hotspot-wheel" data-hotspot="wheels"><span>04</span></div></div><div class="story-copy"><p class="eyebrow dark-eyebrow"><span></span> 03 — The Aero One / system study</p><div class="chapter-counter"><span data-chapter-number>01</span><i></i><span>06</span></div><div class="chapter-copy" data-chapter-copy><p class="chapter-label">01 / FRAME</p><h2 class="display-v2">Strength<br>without<br><em>weight.</em></h2><p class="chapter-description">Precision carbon architecture engineered to disappear beneath you.</p></div><div class="story-controls"><button type="button" data-story-prev aria-label="Previous chapter">←</button><button type="button" data-story-next aria-label="Next chapter">→</button></div></div></div><div class="story-steps" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div></section>
+        <section class="engineering section-cream"><div class="engineering-head"><div class="section-kicker">04 — Engineered different</div><h2 class="display-v2 reveal">Numbers with<br><em>a point of view.</em></h2><p>Measured where it matters. Felt everywhere else.</p></div><div class="metric-stage"><div class="metric-main"><strong>7.2</strong><span>KG / COMPLETE BUILD</span></div><div class="metric-side"><div><strong>100%</strong><span>CARBON MONOCOQUE</span></div><div><strong>42%</strong><span>LESS FRONTAL AREA</span></div><div><strong>12×</strong><span>ELECTRONIC SHIFTING</span></div></div></div></section>
+        <section class="collection-v2 section-dark"><div class="collection-v2-head"><div><div class="section-kicker">05 — The collection</div><h2 class="display-v2 reveal">Choose your<br><em>terrain.</em></h2></div><a href="/bicycles" class="arrow-link light-link">View all bicycles <span>↗</span></a></div><div class="featured-product"><div class="featured-product-image"></div><div class="featured-product-copy"><span class="product-index">A / 01</span><h3>Aero One</h3><p>Speed, distilled into a machine that leaves only the road between you and the horizon.</p><a class="button button-light" href="/bicycles/aero-one">Explore Aero One <span>↗</span></a></div></div><div class="mini-collection"><a href="/bicycles/terrain-x"><span>02</span><strong>Terrain X</strong><small>All road / Beyond the pavement</small><b>↗</b></a><a href="/bicycles/forma-s"><span>03</span><strong>Forma S</strong><small>Urban / The daily, elevated</small><b>↗</b></a><a href="/bicycles/gravel-r"><span>04</span><strong>Gravel R</strong><small>Gravel / Find the unmarked road</small><b>↗</b></a></div></section>
+        <section class="studio-preview section-cream"><div class="studio-image"></div><div class="studio-copy"><div class="section-kicker">06 — Product studio</div><h2 class="display-v2 reveal">Your ride,<br><em>resolved.</em></h2><p>Choose a finish, tune the components, and make a machine that belongs to your particular kind of distance.</p><a class="button button-dark" href="/configurator">Open the configurator <span>↗</span></a></div></section>
+        <section class="field-note section-dark"><div class="field-image"></div><div class="field-copy"><div class="section-kicker">07 — Field notes</div><h2 class="display-v2 reveal">Go where<br>the map gets<br><em>quiet.</em></h2><p>Routes, rituals, and the small decisions that make a long ride feel like your own.</p><a href="/routes" class="arrow-link light-link">Find a route <span>↗</span></a></div></section>
+        <section class="closing-v2 section-cream"><p class="eyebrow dark-eyebrow"><span></span> DEVICECO / Keep moving</p><h2 class="display-v2 reveal">Make your<br><em>own line.</em></h2><div><a class="button button-dark" href="/bicycles">Explore bicycles <span>↗</span></a><a class="text-link" href="/journal">Read the journal <span>↗</span></a></div></section>
+    </main>
+    <x-site-footer />
+</div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<?php
+namespace App\Http\Controllers;
+use App\Models\BikeConfiguration;
+use App\Models\Bicycle;
+use Illuminate\Http\Request;
+class ConfiguratorController extends Controller { private const UPGRADES = ['finish' => ['forest' => 0, 'silver' => 180, 'sage' => 120], 'wheels' => ['alloy' => 0, 'carbon' => 900], 'drivetrain' => ['mechanical' => 0, 'electronic' => 1100]]; public function create(?Bicycle $bicycle = null) { return view('configurator', ['bicycle' => $bicycle ?: Bicycle::where('slug', 'aero-one')->firstOrFail()]); } public function store(Request $request) { $validated = $request->validate(['bicycle_id' => ['required', 'exists:bicycles,id'], 'finish' => ['required', 'in:forest,silver,sage'], 'wheels' => ['required', 'in:alloy,carbon'], 'drivetrain' => ['required', 'in:mechanical,electronic']]); $bicycle = Bicycle::findOrFail($validated['bicycle_id']); $total = (float) $bicycle->price + self::UPGRADES['finish'][$validated['finish']] + self::UPGRADES['wheels'][$validated['wheels']] + self::UPGRADES['drivetrain'][$validated['drivetrain']]; BikeConfiguration::create(['user_id' => auth()->id(), 'bicycle_id' => $bicycle->id, 'options' => $validated, 'total_price' => $total]); return back()->with('status', 'Configuration saved to your DEVICECO.'); } }
